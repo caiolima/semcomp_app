@@ -12,6 +12,10 @@ $action=$_GET['action'];
 
 if($action=="m_agenda"){
 	
+}else if($action=="categoria"){
+	
+}else if($action=="search"){
+	
 }
 
 ?>
