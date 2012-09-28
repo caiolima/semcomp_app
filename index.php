@@ -13,28 +13,40 @@
 <script src="js/bootstrap.min.js"></script>
 <body>
 
+	
+	<?php include_once 'header.php'; ?>
+	
 
+	<div class="well well-small marge_15" align="center" style="color: white;">
+		O que esta acontecendo?
+	</div>
 
-	<div class="row-fluid">
-		<table class="table table-bordered">
+	<div class="well well-small marge_15">
 
-			<tr class="success">
-				<td>teste 1</td>
-				<td>teste 2</td>
-				<td>teste 3</td>
-			</tr>
-			<tr>
-				<td>teste 1</td>
-				<td>teste 2</td>
-				<td>teste 3</td>
-			</tr>
-			<tr>
-				<td>teste 1</td>
-				<td>teste 2</td>
-				<td>teste 3</td>
-			</tr>
-
-		</table>
+		<div class="row-fluid">
+			<div class="span6">
+				<a href="show_eventos.php"><img src="img/tb_principal.png" class="img-rounded"></a>
+			</div>
+			<div class="span6">
+				<a href="show_eventos.php"><img src="img/tb_globo.png" class="img-rounded"></a>
+			</div>
+		</div>
+		<div class="row-fluid" style="margin-top: 20px">
+			<div class="span6">
+				<a href="show_eventos.php"><img src="img/tb_empreendedor.png" class="img-rounded"></a>
+			</div>
+			<div class="span6">
+				<a href="show_eventos.php"><img src="img/tb_inovacao.png" class="img-rounded"></a>
+			</div>
+		</div>
+		<div class="row-fluid" style="margin-top: 20px">
+			<div class="span6">
+				<a href="show_eventos.php"><img src="img/tb_ciencia.png" class="img-rounded"></a>
+			</div>
+			<div class="span6">
+				<a href="show_eventos.php"><img src="img/tb_tecnologia.png" class="img-rounded"></a>
+			</div>
+		</div>
 	</div>
 
 </body>
