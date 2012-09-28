@@ -68,10 +68,16 @@ if($action=="m_agenda"){
 			<?php foreach($lista_quarta as $atividade){
 					$bd_atividades=new AtividadesBD();
 					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+					$idsala = $atividade->getSalaId();
+					$idatividade = $atividade->getAtividaesId();
+					$dataa = $atividade->getData();
+					$hora_inicio = $atividade->getHoraInicio();
+					$hora_fim = $atividade->getHoraFim();
+					
 			 ?>
 			<tr>
-				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
-				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,2)."h-".substr($atividade->getHoraFim(),0,2)."h"; echo $data;  ?></td>
+				<td width="66%"><a href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?></a></td>
 				<td width="10%"><input type="checkbox"
 					id="inlineCheckbox1" value="option1"></td>
 
@@ -90,10 +96,15 @@ if($action=="m_agenda"){
 			<?php foreach($lista_quinta as $atividade){
 					$bd_atividades=new AtividadesBD();
 					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+					$idsala = $atividade->getSalaId();
+					$idatividade = $atividade->getAtividaesId();
+					$dataa = $atividade->getData();
+					$hora_inicio = $atividade->getHoraInicio();
+					$hora_fim = $atividade->getHoraFim();
 			 ?>
 			<tr>
 				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
-				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="66%"><a href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?></a></td>
 				<td width="10%"><input type="checkbox"
 					id="inlineCheckbox1" value="option1"></td>
 
@@ -111,10 +122,15 @@ if($action=="m_agenda"){
 			<?php foreach($lista_sexta as $atividade){
 					$bd_atividades=new AtividadesBD();
 					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+					$idsala = $atividade->getSalaId();
+					$idatividade = $atividade->getAtividaesId();
+					$dataa = $atividade->getData();
+					$hora_inicio = $atividade->getHoraInicio();
+					$hora_fim = $atividade->getHoraFim();
 			 ?>
 			<tr>
 				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
-				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="66%"><a href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?></a></td>
 				<td width="10%"><input type="checkbox"
 					id="inlineCheckbox1" value="option1"></td>
 
@@ -132,10 +148,15 @@ if($action=="m_agenda"){
 			<?php foreach($lista_sabado as $atividade){
 					$bd_atividades=new AtividadesBD();
 					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+					$idsala = $atividade->getSalaId();
+					$idatividade = $atividade->getAtividaesId();
+					$dataa = $atividade->getData();
+					$hora_inicio = $atividade->getHoraInicio();
+					$hora_fim = $atividade->getHoraFim();
 			 ?>
 			<tr>
 				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
-				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="66%"><a href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?></a></td>
 				<td width="10%"><input type="checkbox"
 					id="inlineCheckbox1" value="option1"></td>
 
