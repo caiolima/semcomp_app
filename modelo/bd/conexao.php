@@ -3,7 +3,7 @@
 class conexao {
 
     // Nas linhas abaixo você poderá colocar as informações do Banco de Dados.
-    var $host = "localhost"; // Nome ou IP do Servidor
+    var $host = "192.168.0.139"; // Nome ou IP do Servidor
     var $user = "root"; // Usuário do Servidor MySQL
     var $senha = ""; // Senha do Usuário MySQL
     var $dbase = "secomp"; // Nome do seu Banco de Dados
