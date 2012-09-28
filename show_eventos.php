@@ -24,7 +24,7 @@
 	<table class="table table-bordered" >
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
@@ -45,7 +45,7 @@
 		</tr>
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
@@ -60,28 +60,28 @@
 	<table class="table table-bordered" >
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td  width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
@@ -96,28 +96,28 @@
 	<table class="table table-bordered" >
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td  width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
@@ -132,28 +132,28 @@
 	<table class="table table-bordered" >
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td  width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
 		</tr>
 		<tr>
 			<td width="24%">10h-11h</td>
-			<td width="66%"><a href="#">Desc da atividade</a></td>
+			<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
 			<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 				value="option1"></td>
 
