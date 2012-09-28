@@ -2,6 +2,8 @@
 
 include_once 'modelo/bd/SalaAtividadesBD.php';
 include_once 'modelo/modelo/SalaAtividades.php';
+include_once 'modelo/bd/AtividadesBD.php';
+include_once 'modelo/negocio/Atividades.php';
 
 $lista_quarta=array();
 $lista_quinta=array();
@@ -11,11 +13,24 @@ $lista_sabado=array();
 $action=$_GET['action'];
 
 if($action=="m_agenda"){
-	
+
 }else if($action=="categoria"){
-	
+	$idcategoria = $_GET['idcategoria'];
+	$sala_atividade = new SalaAtividadesBD();
+	$lista_quarta = $sala_atividade->getAllFromDateCategoria('2012-10-03', $idcategoria);
+	$lista_quinta = $sala_atividade->getAllFromDateCategoria('2012-10-04', $idcategoria);
+	$lista_sexta = $sala_atividade->getAllFromDateCategoria('2012-10-05', $idcategoria);
+	$lista_sabado = $sala_atividade->getAllFromDateCategoria('2012-10-06', $idcategoria);
+
 }else if($action=="search"){
-	
+
+	$search=$_GET['s_value'];
+	$m_bd=new SalaAtividadesBD();
+	$lista_quarta = $m_bd->searchByDate($search, "2012-10-03");
+	$lista_quinta = $m_bd->searchByDate($search, "2012-10-04");
+	$lista_sexta = $m_bd->searchByDate($search, "2012-10-05");
+	$lista_sabado = $m_bd->searchByDate($search, "2012-10-06");
+
 }
 
 ?>
@@ -49,34 +64,19 @@ if($action=="m_agenda"){
 	<div
 		style="margin-bottom: 20px; padding-right: 10px; padding-left: 10px;">
 		<table class="table table-bordered">
+			<?php foreach($lista_quarta as $atividade){
+					$bd_atividades=new AtividadesBD();
+					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+			 ?>
 			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
+				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
+				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="10%"><input type="checkbox"
+					id="inlineCheckbox1" value="option1"></td>
 
 			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="#">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="#">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
+			<?php } ?>
+			
 		</table>
 	</div>
 
@@ -86,34 +86,18 @@ if($action=="m_agenda"){
 	<div
 		style="margin-bottom: 20px; padding-right: 10px; padding-left: 10px;">
 		<table class="table table-bordered">
+			<?php foreach($lista_quinta as $atividade){
+					$bd_atividades=new AtividadesBD();
+					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+			 ?>
 			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
+				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
+				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="10%"><input type="checkbox"
+					id="inlineCheckbox1" value="option1"></td>
 
 			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
+			<?php } ?>
 		</table>
 	</div>
 
@@ -123,34 +107,18 @@ if($action=="m_agenda"){
 	<div
 		style="margin-bottom: 20px; padding-right: 10px; padding-left: 10px;">
 		<table class="table table-bordered">
+			<?php foreach($lista_sexta as $atividade){
+					$bd_atividades=new AtividadesBD();
+					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+			 ?>
 			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
+				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
+				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="10%"><input type="checkbox"
+					id="inlineCheckbox1" value="option1"></td>
 
 			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
+			<?php } ?>
 		</table>
 	</div>
 
@@ -160,34 +128,18 @@ if($action=="m_agenda"){
 	<div
 		style="margin-bottom: 20px; padding-right: 10px; padding-left: 10px;">
 		<table class="table table-bordered">
+			<?php foreach($lista_sabado as $atividade){
+					$bd_atividades=new AtividadesBD();
+					$m_atividade=$bd_atividades->getOne($atividade->getAtividaesId());
+			 ?>
 			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
+				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
+				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
+				<td width="10%"><input type="checkbox"
+					id="inlineCheckbox1" value="option1"></td>
 
 			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
-			<tr>
-				<td width="24%">10h-11h</td>
-				<td width="66%"><a href="desc_atividade.php">Desc da atividade</a></td>
-				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
-					value="option1"></td>
-
-			</tr>
+			<?php } ?>
 		</table>
 	</div>
 
