@@ -14,7 +14,12 @@
 <body >
 
 
-	<?php include_once 'header.php'; ?>
+	<?php
+
+	$has_back=true;
+	$link_back="index.php";
+	
+	include_once 'header.php'; ?>
 
 
 	<div class="well well-small marge_15" align="center"
