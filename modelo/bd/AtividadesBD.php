@@ -51,6 +51,31 @@ class AtividadesBD{
 		return $array;
 
 	}
+	
+	public function getSearch($like){
+		$mysql = new conexao;
+
+		$sql = $mysql->sql_query("select * from atividades where titulo like '%"+like+"%' or descricao like '%"+like+"%'");
+
+		$array = array();
+		$i = 0;
+
+
+		while($ativi = mysql_fetch_array($sql)){
+			$atividades = new Atividades();
+			$atividades->setDescricao($ativi['descricao']);
+			$atividades->setIdAtividades($ativi['idatividades']);
+			$atividades->setTitulo($ativi['titulo']);
+			$atividades->setCategoria_IdCategoria($ativi['categoria_idcategoria']);
+			$atividades->setImagem($ativi['imagem']);
+			$array[$i]= $atividades;
+			$i = $i + 1;
+
+		}
+
+		return $array;
+
+	}
 
 }
 
