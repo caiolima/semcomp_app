@@ -25,26 +25,26 @@
 
 		<div class="row-fluid">
 			<div class="span6">
-				<a href="show_eventos.php"><img src="img/tb_principal.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=2"><img src="img/tb_principal.png" class="img-rounded"></a>
 			</div>
 			<div class="span6">
-				<a href="show_eventos.php"><img src="img/tb_globo.png" class="img-rounded"></a>
-			</div>
-		</div>
-		<div class="row-fluid" style="margin-top: 20px">
-			<div class="span6">
-				<a href="show_eventos.php"><img src="img/tb_empreendedor.png" class="img-rounded"></a>
-			</div>
-			<div class="span6">
-				<a href="show_eventos.php"><img src="img/tb_inovacao.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=3"><img src="img/tb_globo.png" class="img-rounded"></a>
 			</div>
 		</div>
 		<div class="row-fluid" style="margin-top: 20px">
 			<div class="span6">
-				<a href="show_eventos.php"><img src="img/tb_ciencia.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=4"><img src="img/tb_empreendedor.png" class="img-rounded"></a>
 			</div>
 			<div class="span6">
-				<a href="show_eventos.php"><img src="img/tb_tecnologia.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=5"><img src="img/tb_inovacao.png" class="img-rounded"></a>
+			</div>
+		</div>
+		<div class="row-fluid" style="margin-top: 20px">
+			<div class="span6">
+				<a href="show_eventos.php?action=categoria&idcategoria=6"><img src="img/tb_ciencia.png" class="img-rounded"></a>
+			</div>
+			<div class="span6">
+				<a href="show_eventos.php?action=categoria&idcategoria=7"><img src="img/tb_tecnologia.png" class="img-rounded"></a>
 			</div>
 		</div>
 	</div>
