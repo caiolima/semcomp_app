@@ -38,3 +38,14 @@ function delete_atividade(id_atividade){
 	
 }
 
+function checkClicked(status,id_atividade){
+	if(status==true){
+		alert("Atividade "+id_atividade+" adicionada a sua agenda");
+		add_atividade(id_atividade);
+	}else{
+		alert("Atividade "+id_atividade+" removida da sua agenda");
+		delete_atividade(id_atividade);
+	}
+	
+}
+

@@ -14,6 +14,14 @@ $lista_sabado=array();
 $action=$_GET['action'];
 
 if($action=="m_agenda"){
+	
+	$lista_my_activities=$_COOKIE['atividades'];
+	if($lista_my_activities!=null){
+		
+		$atividades=split("_", $lista_my_activities);
+		
+		
+	}
 
 }else if($action=="categoria"){
 	$idcategoria = $_GET['idcategoria'];
@@ -48,6 +56,7 @@ if($action=="m_agenda"){
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/cookie_atividades.js"></script>
 <body>
 
 
@@ -95,7 +104,7 @@ if($action=="m_agenda"){
 				<td width="24%"><?php echo substr($atividade->getHoraInicio(),0,2)+"h-"+substr($atividade->getHoraFim(),0,2)+"h";  ?></td>
 				<td width="66%"><a href="desc_atividade.php"><?php echo $m_atividade->getDescricao();  ?></a></td>
 				<td width="10%"><input type="checkbox"
-					id="inlineCheckbox1" value="option1"></td>
+					id="inlineCheckbox1" value="option1" onclick="checkClicked(this.checked,<?php echo $atividade->getAtividaesId()?>)" ></td>
 
 			</tr>
 			<?php } ?>
