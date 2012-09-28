@@ -1,7 +1,7 @@
 <?php
 
 include_once 'modelo/bd/SalaAtividadesBD.php';
-include_once 'modelo/modelo/SalaAtividades.php';
+include_once 'modelo/negocio/SalaAtividades.php';
 
 $lista_quarta=array();
 $lista_quinta=array();
@@ -13,6 +13,12 @@ $action=$_GET['action'];
 if($action=="m_agenda"){
 	
 }else if($action=="categoria"){
+	$idcategoria = $_GET['idcategoria'];
+	$sala_atividade = new SalaAtividadesBD();
+	$lista_quarta = $sala_atividade->getAllFromDateCategoria('2012-10-03', $idcategoria);
+	$lista_quinta = $sala_atividade->getAllFromDateCategoria('2012-10-04', $idcategoria);
+	$lista_sexta = $sala_atividade->getAllFromDateCategoria('2012-10-05', $idcategoria);
+	$lista_sabado = $sala_atividade->getAllFromDateCategoria('2012-10-06', $idcategoria);
 	
 }else if($action=="search"){
 	
