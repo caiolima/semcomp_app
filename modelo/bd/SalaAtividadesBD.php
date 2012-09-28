@@ -1,47 +1,51 @@
 <?php
 
 include_once("conexao.php");
-include_once 'modelo/negocio/SalaAtividades.php.php';
+include_once 'modelo/negocio/SalaAtividades.php';
 
 
 
 class SalaAtividadesBD{
 
 
-	public function getOne($id){
+	public function getOne($idatividades){
 		$mysql = new conexao;
 
-		$sql = $mysql->sql_query("select * from sala_atividades where  = $id");
+		$sql = $mysql->sql_query("select * from sala_atividades where atividades_idatividades = $idatividades");
 
-		$atividades = new Atividades();
+		$sala_atividade = new SalaAtividades();
 
-		while($ativi = mysql_fetch_array($sql)){
-			$atividades->setDescricao($ativi['descricao']);
-			$atividades->setIdAtividades($ativi['idatividades']);
-			$atividades->setTitulo($ativi['titulo']);
-			$atividades->setCategoria_IdCategoria($ativi['categoria_idcategoria']);
+		while($salaatividade = mysql_fetch_array($sql)){
+			$sala_atividade->setData($salaatividade['data']);
+			$sala_atividade->setHoraInicio($salaatividade['hora_inicio']);
+			$sala_atividade->setHoraFim($salaatividade['hora_fim']);
+			$sala_atividade->setSalaId($salaatividade['sala_idsala']);
+			$sala_atividade->setAtividadesId($salaatividade['atividades_idatividades']);
+			$sala_atividade->setCategoriaId($salaatividade['atividades_categoria_idcategoria']);
 		}
 
-		return $atividades;
+		return $sala_atividade;
 
 	}
 
 	public function getAll(){
 		$mysql = new conexao;
 
-		$sql = $mysql->sql_query("select * from atividades");
+		$sql = $mysql->sql_query("select * from sala_atividades");
 
 		$array = array();
 		$i = 0;
 
 
-		while($ativi = mysql_fetch_array($sql)){
-			$atividades = new Atividades();
-			$atividades->setDescricao($ativi['descricao']);
-			$atividades->setIdAtividades($ativi['idatividades']);
-			$atividades->setTitulo($ativi['titulo']);
-			$atividades->setCategoria_IdCategoria($ativi['categoria_idcategoria']);
-			$array[$i]= $atividades;
+		while($salaatividade = mysql_fetch_array($sql)){
+			$sala_atividade = new SalaAtividades();
+			$sala_atividade->setData($salaatividade['data']);
+			$sala_atividade->setHoraInicio($salaatividade['hora_inicio']);
+			$sala_atividade->setHoraFim($salaatividade['hora_fim']);
+			$sala_atividade->setSalaId($salaatividade['sala_idsala']);
+			$sala_atividade->setAtividadesId($salaatividade['atividades_idatividades']);
+			$sala_atividade->setCategoriaId($salaatividade['atividades_categoria_idcategoria']);
+			$array[$i]= $sala_atividade;
 			$i = $i + 1;
 
 		}
