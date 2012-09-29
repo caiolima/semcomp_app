@@ -11,11 +11,14 @@
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 <body>
 
 	
 	<?php
 	$has_back=false;
+	$isIndex=true;
+	
 	include_once 'header.php'; 
 	?>
 	

@@ -12,15 +12,15 @@
 <div class="navbar">
 	<div class="navbar-inner">
 		<ul class="nav">
-			<li><a href="index.php">Home</a></li>
-			<li><a href="show_eventos.php?action=m_agenda">Minha Agenda</a></li>
+			<li <?php if(!empty($isIndex)) echo 'class="active"'?>><a href="index.php">Home</a></li>
+			<li <?php if(!empty($isMyAgenda)) echo 'class="active"'?>><a href="show_eventos.php?action=m_agenda">Minha Agenda</a></li>
 			
 		</ul>
 	</div>
 </div>
 
 <div class="row-fuild" style="margin-top: 10px;" align="center">
-	<form class="form-search" action="show_eventos.php?action=search" method="get">
+	<form class="form-search" action="show_eventos.php?action=search" method="post">
 		<div class="input-append">
 			<input id="s_value" name="s_value" type="text" class="span2 search-query" placeholder="Ache na programa&ccedil;&atilde;o">
 			<button type="submit" class="btn">Pesquisar</button>

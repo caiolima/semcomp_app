@@ -110,7 +110,46 @@ class SalaAtividadesBD{
 	public function searchByDate($search, $date){
 		$mysql = new conexao;
 
-		$sql = $mysql->sql_query("select * from sala_atividades inner join atividades on atividades_idatividades = atividades.idatividades where atividades.titulo like '%"+$search+"d%' or atividades.descricao like %"+$search+"d%' and data = '"+$date+"' order by hora_inicio;");
+
+
+		$sql = $mysql->sql_query("select * from sala_atividades inner join atividades on atividades_idatividades = atividades.idatividades where (atividades.titulo like '%".$search."%' or atividades.descricao like '%".$search."%') and data = '".$date."' order by hora_inicio;");
+
+
+		$array = array();
+		$i = 0;
+
+
+		while($salaatividade = mysql_fetch_array($sql)){
+				
+			$sala_atividade = new SalaAtividades();
+			$sala_atividade->setData($salaatividade['data']);
+			$sala_atividade->setHoraInicio($salaatividade['hora_inicio']);
+			$sala_atividade->setHoraFim($salaatividade['hora_fim']);
+			$sala_atividade->setSalaId($salaatividade['sala_idsala']);
+			$sala_atividade->setAtividadesId($salaatividade['atividades_idatividades']);
+			$sala_atividade->setCategoriaId($salaatividade['atividades_categoria_idcategoria']);
+			$array[$i]= $sala_atividade;
+			$i = $i + 1;
+
+		}
+
+		return $array;
+	}
+
+	public function getMyList($list, $date){
+		$mysql = new conexao();
+		$sql_query="select * from sala_atividades where (";
+		for($i=0;$i<count($list);$i++){
+			$sql_query.="atividades_idatividades=$list[$i]";
+			if($i<count($list)-1){
+				$sql_query.=" or ";
+			}
+		}
+
+		$sql_query.=") and data = '$date' order by hora_inicio;";
+
+
+		$sql = $mysql->sql_query($sql_query);
 
 
 		$array = array();
@@ -129,6 +168,8 @@ class SalaAtividadesBD{
 			$i = $i + 1;
 
 		}
+
+		return $array;
 
 
 	}

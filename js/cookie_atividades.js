@@ -19,12 +19,15 @@ function add_atividade(id_atividade){
 function delete_atividade(id_atividade){
 
 	list_atividades=readFromCookie("atividades");
+	
 	var date = new Date();
 	date.setTime(date.getTime() + (5 * 24 * 60 * 60 * 1000));
 	if(list_atividades!=null){
 		var temp = new Array();
-		temp = b.split('_');
+		
+		temp = list_atividades.split('_');
 		list_atividades="";
+		
 		for(var i=0;i<temp.length;i++){
 			if(temp[i]!=id_atividade){
 				list_atividades+=temp[i];
@@ -33,17 +36,17 @@ function delete_atividade(id_atividade){
 				}
 			}
 		}
-		document.cookie="atividades="+list_atividades+"_m"+id_atividade+";expires="+date.toGMTString()+";";
+		document.cookie="atividades="+list_atividades+";expires="+date.toGMTString()+";";
 	}
 	
 }
 
 function checkClicked(status,id_atividade){
 	if(status==true){
-		alert("Atividade "+id_atividade+" adicionada a sua agenda");
+		
 		add_atividade(id_atividade);
 	}else{
-		alert("Atividade "+id_atividade+" removida da sua agenda");
+		
 		delete_atividade(id_atividade);
 	}
 	
