@@ -13,6 +13,15 @@ $lista_sabado=array();
 
 $action=$_GET['action'];
 
+
+if(empty($_GET['dia'])){
+	$dia = "0";
+}else{
+	$dia = $_GET['dia'];
+	
+}
+
+
 $lista_my_activities=$_COOKIE['atividades'];
 $atividades=split("_", $lista_my_activities);
 
@@ -50,6 +59,20 @@ if($action=="m_agenda"){
 	$lista_sexta = $m_bd->searchByDate($search, "2012-10-05");
 	$lista_sabado = $m_bd->searchByDate($search, "2012-10-06");
 
+}else if($action=="dia"){
+
+	$dia=$_GET['dia'];
+	
+	$sala_atividade = new SalaAtividadesBD();
+	if($dia == "1")
+	  $lista_quarta = $sala_atividade->getAllFromDate('2012-10-03');
+	else if($dia == "2")
+	       $lista_quinta = $sala_atividade->getAllFromDate('2012-10-04');
+	     else if($dia == "3")
+	            $lista_sexta = $sala_atividade->getAllFromDate('2012-10-05');
+	          else if($dia == "4")
+	                 $lista_sabado = $sala_atividade->getAllFromDate('2012-10-06');
+
 }
 
 ?>
@@ -77,7 +100,10 @@ if($action=="m_agenda"){
 
 	include_once 'header.php'; ?>
 
-
+    <?php 
+   
+    if(($action != "dia") || ($dia == "1")){
+    ?>
 	<div class="well well-small marge_15" align="center"
 		style="color: white;">Quarta-Feira</div>
 
@@ -123,6 +149,13 @@ if($action=="m_agenda"){
 
 		</table>
 	</div>
+	
+	<?php }?>
+	
+	 <?php 
+		 
+    if(($action != "dia") || ($dia == "2")){
+    ?>
 
 	<div class="well well-small marge_15" align="center"
 		style="color: white;">Quinta-Feira</div>
@@ -169,6 +202,13 @@ if($action=="m_agenda"){
 
 		</table>
 	</div>
+	
+	<?php }?>
+	
+	 <?php 
+	
+    if(($action != "dia") || ($dia == "3")){
+    ?>
 
 	<div class="well well-small marge_15" align="center"
 		style="color: white;">Sexta-Feira</div>
@@ -215,6 +255,11 @@ if($action=="m_agenda"){
 
 		</table>
 	</div>
+	
+	<?php }?>
+	 <?php 
+    if(($action != "dia") || ($dia == "4")){
+    ?>
 
 	<div class="well well-small marge_15" align="center"
 		style="color: white;">Sabado</div>
@@ -261,6 +306,7 @@ if($action=="m_agenda"){
 
 		</table>
 	</div>
+	<?php }?>
 
 </body>
 </html>

@@ -57,7 +57,7 @@ class SalaAtividadesBD{
 	public function getAllFromDate($date){
 		$mysql = new conexao;
 
-		$sql = $mysql->sql_query("select * from sala_atividades where data='"+$date+"' order by hora_inicio");
+		$sql = $mysql->sql_query("select * from sala_atividades where data= '".$date."' order by hora_inicio");
 
 		$array = array();
 		$i = 0;
