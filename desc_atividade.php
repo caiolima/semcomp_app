@@ -57,7 +57,7 @@
 				<td style="text-align: center;">Onde?</td>
 			</tr>
 			<tr>
-				<td><?php echo $sala->getDescricao();?><br>Data: <?php echo substr($data,8,2)?>/<?php echo substr($data,5,2)?>/<?php echo substr($data,0,4)?> das <?php echo substr($hora_inicio, 0,2)?>Hrs às <?php echo substr($hora_fim, 0,2)?>Hrs<br>Como chegar: <?php echo $sala->getLocalizacao();?></td>
+				<td><?php echo $sala->getDescricao();?><br>Data: <?php echo substr($data,8,2)?>/<?php echo substr($data,5,2)?>/<?php echo substr($data,0,4)?> das <?php echo substr($hora_inicio, 0,5)?>Hrs às <?php echo substr($hora_fim, 0,5)?>Hrs<br>Endereço: <?php echo $sala->getLocalizacao();?></td>
 			</tr>
 		</table>
 	</div>
