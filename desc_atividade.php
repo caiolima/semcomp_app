@@ -1,8 +1,10 @@
-
+<?php 
+ini_set('default_charset','UTF-8');
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bootstrap 101 Template</title>
+<title>SEMCOMP 2012</title>
 <!-- Bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +17,14 @@
 
 
 	<?php
-	
+
 	$has_back=true;
-	$link_back = $_SERVER['HTTP_REFERER'];
-	
+	$link_back="";
+	if(empty($_SERVER['HTTP_REFERER'])){
+		$link_back="index.php";
+	}else{
+		$link_back = $_SERVER['HTTP_REFERER'];
+	}
 	include_once 'header.php';
 	include_once 'modelo/bd/AtividadesBD.php';
 	include_once 'modelo/negocio/Atividades.php';
@@ -57,7 +63,7 @@
 				<td style="text-align: center;">Onde?</td>
 			</tr>
 			<tr>
-				<td><?php echo $sala->getDescricao();?><br>Data: <?php echo substr($data,8,2)?>/<?php echo substr($data,5,2)?>/<?php echo substr($data,0,4)?> das <?php echo substr($hora_inicio, 0,2)?>Hrs às <?php echo substr($hora_fim, 0,2)?>Hrs<br>Como chegar: <?php echo $sala->getLocalizacao();?></td>
+				<td><?php echo $sala->getDescricao();?><br>Data: <?php echo substr($data,8,2)?>/<?php echo substr($data,5,2)?>/<?php echo substr($data,0,4)?> das <?php echo substr($hora_inicio, 0,5)?>Hrs às <?php echo substr($hora_fim, 0,5)?>Hrs<br>Endereço: <?php echo $sala->getLocalizacao();?></td>
 			</tr>
 		</table>
 	</div>

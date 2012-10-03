@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bootstrap 101 Template</title>
+<title>SEMCOMP 2012</title>
 <!-- Bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +50,7 @@
 	</div>
 	
 	<div class="well well-small marge_15" align="center" style="color: white;">
-		Em cada espa�o
+		Em cada espa&ccedil;o
 	</div>
 
 	<div class="well well-small marge_15">

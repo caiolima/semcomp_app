@@ -1,5 +1,7 @@
 <?php
 
+ini_set('default_charset','UTF-8');
+
 include_once 'modelo/bd/SalaAtividadesBD.php';
 include_once 'modelo/bd/AtividadesBD.php';
 include_once 'modelo/negocio/Atividades.php';
@@ -18,11 +20,12 @@ if(empty($_GET['dia'])){
 	$dia = "0";
 }else{
 	$dia = $_GET['dia'];
-	
+
 }
+$lista_my_activities="";
+if(!empty($_COOKIE['atividades']))
+	$lista_my_activities=$_COOKIE['atividades'];
 
-
-$lista_my_activities=$_COOKIE['atividades'];
 $atividades=split("_", $lista_my_activities);
 
 if($action=="m_agenda"){
@@ -132,10 +135,10 @@ if($action=="m_agenda"){
 
 					?>
 			<tr>
-				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,2)."h-".substr($atividade->getHoraFim(),0,2)."h"; echo $data;  ?>
+				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"
@@ -185,10 +188,10 @@ if($action=="m_agenda"){
 
 					?>
 			<tr>
-				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,2)."h-".substr($atividade->getHoraFim(),0,2)."h"; echo $data;  ?>
+				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"
@@ -238,10 +241,10 @@ if($action=="m_agenda"){
 
 					?>
 			<tr>
-				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,2)."h-".substr($atividade->getHoraFim(),0,2)."h"; echo $data;  ?>
+				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"
@@ -289,10 +292,10 @@ if($action=="m_agenda"){
 
 					?>
 			<tr>
-				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,2)."h-".substr($atividade->getHoraFim(),0,2)."h"; echo $data;  ?>
+				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getDescricao();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"

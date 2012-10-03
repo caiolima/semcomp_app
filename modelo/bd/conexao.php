@@ -2,13 +2,13 @@
 
 class conexao {
 
-    // Nas linhas abaixo você poderá colocar as informações do Banco de Dados.
+    // Nas linhas abaixo voc poder‡ colocar as informa›es do Banco de Dados.
     var $host = "localhost"; // Nome ou IP do Servidor
-    var $user = "root"; // Usuário do Servidor MySQL
-    var $senha = "ifb@s@m@ro"; // Senha do Usuário MySQL
-    var $dbase = "secomp"; // Nome do seu Banco de Dados
+    var $user = "gerclientes"; // Usu‡rio do Servidor MySQL
+    var $senha = "bNCIOrkDRF"; // Senha do Usu‡rio MySQL
+    var $dbase = "gerclientes"; // Nome do seu Banco de Dados
 
-    // Criaremos as variáveis que Utilizaremos no script
+    // Criaremos as vari‡veis que Utilizaremos no script
     var $query;
     var $link;
     var $resultado;
@@ -20,18 +20,18 @@ class conexao {
     }
   
 
-  // Cria a função para efetuar conexão ao Banco MySQL (não é muito diferente da conexão padrão).
-  // Veja que abaixo, além de criarmos a conexão, geramos condições personalizadas para mensagens de erro.
+  // Cria a fun‹o para efetuar conex‹o ao Banco MySQL (n‹o Ž muito diferente da conex‹o padr‹o).
+  // Veja que abaixo, alŽm de criarmos a conex‹o, geramos condi›es personalizadas para mensagens de erro.
     function conecta(){
         $this->link = @mysql_connect($this->host,$this->user,$this->senha);
     // Conecta ao Banco de Dados
         if(!$this->link){
       // Caso ocorra um erro, exibe uma mensagem com o erro
-            print "Ocorreu um Erro na conexão MySQL:";
+            print "Ocorreu um Erro na conex‹o MySQL:";
       print "<b>".mysql_error()."</b>";
       die();
         }elseif(!mysql_select_db($this->dbase,$this->link)){
-      // Seleciona o banco após a conexão
+      // Seleciona o banco ap—s a conex‹o
       // Caso ocorra um erro, exibe uma mensagem com o erro
             print "Ocorreu um Erro em selecionar o Banco:";
       print "<b>".mysql_error()."</b>";
@@ -39,7 +39,7 @@ class conexao {
         }
     }
 
-  // Cria a função para "query" no Banco de Dados
+  // Cria a fun‹o para "query" no Banco de Dados
     function sql_query($query){
         $this->conecta();
         $this->query = $query;
@@ -58,7 +58,7 @@ class conexao {
         }        
     }
 
-  // Cria a função para Desconectar do Banco MySQL
+  // Cria a fun‹o para Desconectar do Banco MySQL
     function desconecta(){
         return mysql_close($this->link);
     }
