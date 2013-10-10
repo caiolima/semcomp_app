@@ -13,7 +13,27 @@
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<style type="text/css">
+	.trilha {
+	    height: 100px;
+	    width: 100px;
+	    background: none repeat scroll 0% 0% rgb(51, 51, 51);
+	    border: 6px solid rgb(168, 207, 69);
+	    box-shadow: -5px 6px 0px rgba(0, 0, 0, 0.05);
+	    border-radius: 50% 50% 50% 50%;
+	    font-family: "Droid Sans",sans-serif;
+	    color: rgb(255, 255, 255);
+	    text-align: center;
+	}
 
+	.trilha .titulo h4 {
+	    font-family: "Droid Sans",sans-serif;
+	    text-align: center;
+	    position: relative;
+	    top: 20px;
+	    font-size: 17px;
+	}
+</style>
 <body>
 
 	
@@ -33,7 +53,13 @@
 
 		<div class="row-fluid">
 			<div class="span6">
-				<a href="show_eventos.php?action=dia&dia=1"><img width="100px" height="100px" src="img/dia_1.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=dia&dia=1">
+					<div class="trilha">
+						<div class="titulo">
+							<h4>Trilha<br/>Python</h4>
+						</div>
+					</div>
+				</a>
 			</div>
 			<div class="span6">
 				<a href="show_eventos.php?action=dia&dia=2"><img width="100px" height="100px" src="img/dia_2.png" class="img-rounded"></a>
@@ -53,32 +79,49 @@
 		Em cada espa&ccedil;o
 	</div>
 
-	<div class="well well-small marge_15">
+	<div class="well well-small marge_15" align="center">
 
 		<div class="row-fluid">
 			<div class="span6">
-				<a href="show_eventos.php?action=categoria&idcategoria=2"><img src="img/tb_principal.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=2">
+					<div class="trilha">
+						<div class="titulo">
+							<h4>Trilha<br/>Python</h4>
+						</div>
+					</div>
+				</a>
 			</div>
 			<div class="span6">
-				<a href="show_eventos.php?action=categoria&idcategoria=3"><img src="img/tb_globo.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=3">
+					<div class="trilha">
+						<div class="titulo">
+							<h4>Trilha<br/>Front-End</h4>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 		<div class="row-fluid" style="margin-top: 20px">
 			<div class="span6">
-				<a href="show_eventos.php?action=categoria&idcategoria=4"><img src="img/tb_empreendedor.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=4">
+					<div class="trilha">
+						<div class="titulo">
+							<h4>Trilha<br/>Mobile</h4>
+						</div>
+					</div>
+				</a>
 			</div>
 			<div class="span6">
-				<a href="show_eventos.php?action=categoria&idcategoria=5"><img src="img/tb_inovacao.png" class="img-rounded"></a>
+				<a href="show_eventos.php?action=categoria&idcategoria=5">
+					<div class="trilha">
+						<div class="titulo">
+							<h4>Trilha<br/>Empreende-</h4>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
-		<div class="row-fluid" style="margin-top: 20px">
-			<div class="span6">
-				<a href="show_eventos.php?action=categoria&idcategoria=6"><img src="img/tb_ciencia.png" class="img-rounded"></a>
-			</div>
-			<div class="span6">
-				<a href="show_eventos.php?action=categoria&idcategoria=7"><img src="img/tb_tecnologia.png" class="img-rounded"></a>
-			</div>
-		</div>
+		
 	</div>
 
 </body>

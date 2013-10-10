@@ -4,9 +4,9 @@ class conexao {
 
     // Nas linhas abaixo voc� poder� colocar as informa��es do Banco de Dados.
     var $host = "localhost"; // Nome ou IP do Servidor
-    var $user = ""; // Usu�rio do Servidor MySQL
-    var $senha = ""; // Senha do Usu�rio MySQL
-    var $dbase = ""; // Nome do seu Banco de Dados
+    var $user = "root"; // Usu�rio do Servidor MySQL
+    var $senha = "ifb@s@m@ro"; // Senha do Usu�rio MySQL
+    var $dbase = "secomp"; // Nome do seu Banco de Dados
 
     // Criaremos as vari�veis que Utilizaremos no script
     var $query;
