@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SEMCOMP 2012</title>
+<title>SEMCOMP 2013</title>
 <!-- Bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,13 +53,7 @@
 
 		<div class="row-fluid">
 			<div class="span6">
-				<a href="show_eventos.php?action=dia&dia=1">
-					<div class="trilha">
-						<div class="titulo">
-							<h4>Trilha<br/>Python</h4>
-						</div>
-					</div>
-				</a>
+				<a href="show_eventos.php?action=dia&dia=1"><img width="100px" height="100px" src="img/dia_1.png" class="img-rounded"></a>
 			</div>
 			<div class="span6">
 				<a href="show_eventos.php?action=dia&dia=2"><img width="100px" height="100px" src="img/dia_2.png" class="img-rounded"></a>
@@ -76,7 +70,7 @@
 	</div>
 	
 	<div class="well well-small marge_15" align="center" style="color: white;">
-		Em cada espa&ccedil;o
+		Em cada Trilha
 	</div>
 
 	<div class="well well-small marge_15" align="center">
@@ -115,7 +109,7 @@
 				<a href="show_eventos.php?action=categoria&idcategoria=5">
 					<div class="trilha">
 						<div class="titulo">
-							<h4>Trilha<br/>Empreende-</h4>
+							<h4>Trilha<br/>Empreende-<br/>dorismo</h4>
 						</div>
 					</div>
 				</a>
