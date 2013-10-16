@@ -1,13 +1,15 @@
-<?php 
-ini_set('default_charset','UTF-8');
-?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xml:lang="pt-BR"
+    lang="pt-BR"
+    dir="ltr">
 <head>
-<title>SEMCOMP 2012</title>
+<title>SEMCOMP 2013</title>
 <!-- Bootstrap -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
 </head>
@@ -48,10 +50,10 @@ ini_set('default_charset','UTF-8');
 		<table class="table table-bordered">
 
 			<tr style="color: white; background-color: #000000">
-				<td style="text-align: center;"><?php echo $atividade->getTitulo();?></td>
+				<td style="text-align: center;"><?php echo utf8_encode($atividade->getTitulo());?></td>
 			</tr>
 			<tr>
-				<td><div align="center"><img src="<?php echo $atividade->getImagem();?>" class="img-circle"  style="float: inherit;"/></div><br /> <?php echo $atividade->getDescricao();?></td>
+				<td><div align="center"><img src="<?php echo $atividade->getImagem();?>" class="img-circle"  style="float: inherit;"/></div><br /> <?php echo utf8_encode($atividade->getDescricao());?></td>
 			</tr>
 		</table>
 	</div>
@@ -63,10 +65,14 @@ ini_set('default_charset','UTF-8');
 				<td style="text-align: center;">Onde?</td>
 			</tr>
 			<tr>
-				<td><?php echo $sala->getDescricao();?><br>Data: <?php echo substr($data,8,2)?>/<?php echo substr($data,5,2)?>/<?php echo substr($data,0,4)?> das <?php echo substr($hora_inicio, 0,5)?>Hrs às <?php echo substr($hora_fim, 0,5)?>Hrs<br>Endereço: <?php echo $sala->getLocalizacao();?></td>
+				<td><?php echo utf8_encode($sala->getDescricao());?><br>Data: <?php echo substr($data,8,2)?>/<?php echo substr($data,5,2)?>/<?php echo substr($data,0,4)?> das <?php echo substr($hora_inicio, 0,5)?>Hrs às <?php echo substr($hora_fim, 0,5)?>Hrs<br>Endereço: <?php echo utf8_encode($sala->getLocalizacao());?></td>
 			</tr>
 		</table>
 	</div>
+	
+	<?php 
+		include_once 'bottom.php';
+	?>
 
 </body>
 </html>

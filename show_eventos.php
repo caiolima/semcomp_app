@@ -1,7 +1,5 @@
 <?php
 
-ini_set('default_charset','UTF-8');
-
 include_once 'modelo/bd/SalaAtividadesBD.php';
 include_once 'modelo/bd/AtividadesBD.php';
 include_once 'modelo/negocio/Atividades.php';
@@ -36,10 +34,10 @@ if($action=="m_agenda"){
 		
 		if(!empty($atividades)){
 			$sala_atividade = new SalaAtividadesBD();
-			$lista_quarta = $sala_atividade->getMyList($atividades,'2012-10-03');
-			$lista_quinta = $sala_atividade->getMyList($atividades,'2012-10-04');
-			$lista_sexta = $sala_atividade->getMyList($atividades,'2012-10-05');
-			$lista_sabado = $sala_atividade->getMyList($atividades,'2012-10-06');
+			$lista_quarta = $sala_atividade->getMyList($atividades,'2013-10-16');
+			$lista_quinta = $sala_atividade->getMyList($atividades,'2013-10-17');
+			$lista_sexta = $sala_atividade->getMyList($atividades,'2013-10-18');
+			$lista_sabado = $sala_atividade->getMyList($atividades,'2013-10-19');
 		}
 
 	}
@@ -47,20 +45,20 @@ if($action=="m_agenda"){
 }else if($action=="categoria"){
 	$idcategoria = $_GET['idcategoria'];
 	$sala_atividade = new SalaAtividadesBD();
-	$lista_quarta = $sala_atividade->getAllFromDateCategoria('2012-10-03', $idcategoria);
-	$lista_quinta = $sala_atividade->getAllFromDateCategoria('2012-10-04', $idcategoria);
-	$lista_sexta = $sala_atividade->getAllFromDateCategoria('2012-10-05', $idcategoria);
-	$lista_sabado = $sala_atividade->getAllFromDateCategoria('2012-10-06', $idcategoria);
+	$lista_quarta = $sala_atividade->getAllFromDateCategoria('2013-10-16', $idcategoria);
+	$lista_quinta = $sala_atividade->getAllFromDateCategoria('2013-10-17', $idcategoria);
+	$lista_sexta = $sala_atividade->getAllFromDateCategoria('2013-10-18', $idcategoria);
+	$lista_sabado = $sala_atividade->getAllFromDateCategoria('2013-10-19', $idcategoria);
 
 }else if($action=="search"){
 
 	$search=$_POST['s_value'];
 	
 	$m_bd=new SalaAtividadesBD();
-	$lista_quarta = $m_bd->searchByDate($search, "2012-10-03");
-	$lista_quinta = $m_bd->searchByDate($search, "2012-10-04");
-	$lista_sexta = $m_bd->searchByDate($search, "2012-10-05");
-	$lista_sabado = $m_bd->searchByDate($search, "2012-10-06");
+	$lista_quarta = $m_bd->searchByDate($search, "2013-10-16");
+	$lista_quinta = $m_bd->searchByDate($search, "2013-10-17");
+	$lista_sexta = $m_bd->searchByDate($search, "2013-10-18");
+	$lista_sabado = $m_bd->searchByDate($search, "2013-10-19");
 
 }else if($action=="dia"){
 
@@ -68,27 +66,32 @@ if($action=="m_agenda"){
 	
 	$sala_atividade = new SalaAtividadesBD();
 	if($dia == "1")
-	  $lista_quarta = $sala_atividade->getAllFromDate('2012-10-03');
+	  $lista_quarta = $sala_atividade->getAllFromDate('2013-10-16');
 	else if($dia == "2")
-	       $lista_quinta = $sala_atividade->getAllFromDate('2012-10-04');
+	       $lista_quinta = $sala_atividade->getAllFromDate('2013-10-17');
 	     else if($dia == "3")
-	            $lista_sexta = $sala_atividade->getAllFromDate('2012-10-05');
+	            $lista_sexta = $sala_atividade->getAllFromDate('2013-10-18');
 	          else if($dia == "4")
-	                 $lista_sabado = $sala_atividade->getAllFromDate('2012-10-06');
+	                 $lista_sabado = $sala_atividade->getAllFromDate('2013-10-19');
 
 }
 
 ?>
-
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xml:lang="pt-BR"
+    lang="pt-BR"
+    dir="ltr">
 <head>
-<title>Bootstrap 101 Template</title>
+<title>SEMCOMP 2013</title>
 <!-- Bootstrap -->
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href="css/bootstrap-responsive.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -138,7 +141,7 @@ if($action=="m_agenda"){
 				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo utf8_encode($m_atividade->getTitulo());  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"
@@ -191,7 +194,7 @@ if($action=="m_agenda"){
 				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo utf8_encode($m_atividade->getTitulo());  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"
@@ -244,7 +247,7 @@ if($action=="m_agenda"){
 				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo utf8_encode($m_atividade->getTitulo());  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"
@@ -295,7 +298,7 @@ if($action=="m_agenda"){
 				<td width="24%"><?php $data=substr($atividade->getHoraInicio(),0,5)."h-".substr($atividade->getHoraFim(),0,5)."h"; echo $data;  ?>
 				</td>
 				<td width="66%"><a
-					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo $m_atividade->getTitulo();  ?>
+					href="desc_atividade.php?idsala=<?php echo $idsala?>&idatividade=<?php echo $idatividade?>&data=<?php echo $dataa?>&hora_inicio=<?php echo $hora_inicio?>&hora_fim=<?php echo $hora_fim?>"><?php echo utf8_encode($m_atividade->getTitulo());  ?>
 				</a></td>
 				<td width="10%"><input type="checkbox" id="inlineCheckbox1"
 					value="option1"
@@ -311,5 +314,8 @@ if($action=="m_agenda"){
 	</div>
 	<?php }?>
 
+	<?php 
+		include_once 'bottom.php';
+	?>
 </body>
 </html>

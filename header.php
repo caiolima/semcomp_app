@@ -1,11 +1,9 @@
 <div class="row"
 	style="background-color: black; color: white; padding: 8px; font-size: 20px">
 	 <?php if($has_back){?>
-	 <a class="btn btn-inverse" href="<?php echo $link_back; ?>" style="margin-left: 20px"><i class="icon-arrow-left icon-white"></i></a> <img src="img/marca.png" width="30px" height="30px"
-		style="margin-left: 10px" /> SEMCOMP 2013
+	 <a class="btn btn-inverse" href="<?php echo $link_back; ?>" style="margin-left: 20px"><i class="icon-arrow-left icon-white"></i></a> <span style="margin-left: 20px"> SEMCOMP 2013</span>
 	<?php }else{?>
-	<img src="img/marca.png" width="30px" height="30px"
-		style="margin-left: 20px" /> SEMCOMP 2013
+	<span style="margin-left: 20px"> SEMCOMP 2013</span>
 	<?php }?>
 </div>
 
